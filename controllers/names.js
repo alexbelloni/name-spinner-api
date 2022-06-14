@@ -30,6 +30,16 @@ const Names = () => {
                 try {
                     //browser = await puppeteer.launch();
                     browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+                    browser = await puppeteer.launch({
+                        headless: headless,
+                        devtools: true,
+                        args: [
+                            '--no-sandbox',
+                            '--disable-web-security',
+                            '--disable-features=IsolateOrigins',
+                            '--disable-site-isolation-trials'
+                        ]
+                    })
 
                     const page = await browser.newPage();
                     await page.goto('https://www.facebook.com/');
