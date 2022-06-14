@@ -1,13 +1,17 @@
 const express = require('express');
 require('dotenv').config();
 const logger = require('./logs/logger');
-//const cors = require('cors');
+const cors = require('cors');
 
 const app = express();
 
 logger(app);
 
-//app.use(cors());
+var corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  }
+app.use(cors(corsOptions));
 
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
