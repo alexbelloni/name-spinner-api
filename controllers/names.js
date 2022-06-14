@@ -26,15 +26,16 @@ const Names = () => {
             (async () => {
                 const postUrl = group
 
+                let browser = null;
                 try {
-                    //const browser = await puppeteer.launch();
-                    const browser = await puppeteer.launch({
+                    //browser = await puppeteer.launch();
+                    browser = await puppeteer.launch({
                         args: [
-                          '--no-sandbox',
-                          '--disable-setuid-sandbox',
+                            '--no-sandbox',
+                            '--disable-setuid-sandbox',
                         ],
-                      });
-                      
+                    });
+
                     const page = await browser.newPage();
                     await page.goto('https://www.facebook.com/');
                     await page.type("#email", process.env.EMAIL);
@@ -82,9 +83,11 @@ const Names = () => {
                         //saveFile("names.txt", names.join(','));
                     }
                 } catch (e) {
-                    reject({ error: '-> '+e.message });
+                    reject({ error: '-> ' + e.message });
                 }
-                await browser.close();
+                if (browser) {
+                    await browser.close();
+                }
             })();
 
         })
