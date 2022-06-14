@@ -75,7 +75,7 @@ const Names = () => {
                         //saveFile("names.txt", names.join(','));
                     }
                 } catch (e) {
-                    reject({ error: 'failed2' });
+                    reject({ error: '-> '+e.message });
                 }
                 await browser.close();
             })();
