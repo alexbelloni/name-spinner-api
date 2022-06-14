@@ -10,7 +10,6 @@ const Names = () => {
     }
     async function read(group) {
         return new Promise((resolve, reject) => {
-
             const puppeteer = require('puppeteer');
 
             function saveFile(filename, data) {
