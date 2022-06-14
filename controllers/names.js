@@ -29,10 +29,10 @@ const Names = () => {
                 let browser = null;
                 try {
                     //browser = await puppeteer.launch();
-                    browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+                    //browser = await puppeteer.launch({ args: ['--no-sandbox'] });
                     browser = await puppeteer.launch({
-                        headless: headless,
-                        devtools: true,
+                        //headless: headless,
+                        //devtools: true,
                         args: [
                             '--no-sandbox',
                             '--disable-web-security',
