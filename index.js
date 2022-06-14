@@ -1,13 +1,13 @@
 const express = require('express');
 require('dotenv').config();
 const logger = require('./logs/logger');
-const cors = require('cors');
+//const cors = require('cors');
 
 const app = express();
 
 logger(app);
 
-app.use(cors());
+//app.use(cors());
 
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
