@@ -24,6 +24,9 @@ const Names = () => {
             }
 
             (async () => {
+
+                reject({ error: 'failed' }); return
+
                 const postUrl = group
 
                 const browser = await puppeteer.launch();
