@@ -24,14 +24,10 @@ const Names = () => {
             }
 
             (async () => {
-
-                reject({ error: 'failed' }); return
-
                 const postUrl = group
 
-                const browser = await puppeteer.launch();
-
                 try {
+                    const browser = await puppeteer.launch();
                     const page = await browser.newPage();
                     await page.goto('https://www.facebook.com/');
                     await page.type("#email", process.env.EMAIL);
@@ -79,7 +75,7 @@ const Names = () => {
                         //saveFile("names.txt", names.join(','));
                     }
                 } catch (e) {
-                    reject({ error: e.message })
+                    reject({ error: 'failed2' });
                 }
                 await browser.close();
             })();
