@@ -1,32 +1,28 @@
-# Death Star AuthAPI
+# Name Spinner API
 
-Template of Node.js/MongoDB API for user register and login  
-Fun fact: Death Star because of the theme of my front-end example to use this API. The front-end [demo](https://deathstar-web.vercel.app/)    
-Node.js, Express, JWT, Mongoose, MongoDB  
+It was created to extract people names who commented on donate Facebook group. The client can be a wheel of names for a draw.
 
-## Database
+## Methods
 
-### MongoDB Atlas  
-Official page: https://www.mongodb.com/cloud/atlas  
-Documentation: https://docs.atlas.mongodb.com/getting-started/  
-
-* Build your first cluster
-* Create your first database user
-* Add IP Address to your Access List
-* Load Sample Data (Optional)
-* Connect to your cluster
-
-### Mongoose (ODM library - schemas and models)
-https://mongoosejs.com/docs/api.html  
-npm i mongoose  
+/names  
+body {  
+    "group": "https://www.facebook.com/groups/490065161622264/permalink/1052322248718613/"  
+}  
   
-  https://www.tutorialspoint.com/mongodb/mongodb_aggregation.htm
-  
+response:  
+[  
+    "Bernardo Smith",  
+    "John Doe",  
+    "Jane Edo"  
+]
 
-## .env
-PORT  
-MONGODB_URL  
-AUTH_KEY  
+## Built with
+Nodejs  
+Express  
+Puppeteer
 
-
-
+## Env
+PORT=[number]    
+EMAIL=[string]  
+PASS=[string]  
+FACEBOOK_ACCESS_DISABLED=[0 or 1]

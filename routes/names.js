@@ -5,9 +5,10 @@ module.exports = (app) => {
         if (process.env.FACEBOOK_ACCESS_DISABLED === '1') {
             res.json(["Alex", "André"])
         } else {
-            controller.read(req.body.group).then(u => res.json(u)).catch(e => res.json(e));
+            controller.load(req.body.group)
+                .then(u =>{ console.log(u);res.json(u) } )
+                .catch(e => { console.log(e);res.json(e) } )
         }
     });
-
 }
 
